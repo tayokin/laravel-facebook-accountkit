@@ -5,7 +5,7 @@ All notable changes to `tayokin/laravel-facebook-accountkit` will be documented 
 ## v1.0.0, 2018-04-08, 
    Initial version (added facebook accountKit SDK)
 
-## v1.0.1, 2018-04-08, 
+## v1.1.0, 2018-04-08, 
    Updated config registration
 
 
