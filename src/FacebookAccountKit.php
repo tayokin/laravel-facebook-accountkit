@@ -13,6 +13,7 @@ class FacebookAccountKit extends AccountKit
      *
      * @return array
      *
+     * @throws \RuntimeException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getAccountData(string $code): array

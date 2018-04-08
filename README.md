@@ -24,7 +24,7 @@ Register the package to the [Service Provider](https://laravel.com/docs/master/p
 
 'aliases' => [
     ...
-    'FacebookAccountKit' => Tayokin\FacebookAccountKit\Facades\FacebookAccountKitFacade::class,
+    'AccountKit' => Tayokin\FacebookAccountKit\Facades\FacebookAccountKitFacade::class,
 ],
 ```
 You can make of some assets provided in this package to speed up your implementation:
@@ -52,7 +52,7 @@ Route::get('/<path/to/endpoint>', 'FacebookAccountKitController@endpoint');
 
 Import the package in your Controller and use it therein. E.g:
 ```php
-use FacebookAccountKit;
+use Tayokin\FacebookAccountKit\Facades\FacebookAccountKitFacade;
 use Illuminate\Http\Request;
 
 class FacebookAccountKitController extends Controller
@@ -60,7 +60,7 @@ class FacebookAccountKitController extends Controller
     ...
     public function endpoint(Request $request)
     {
-        $accountData = FacebookAccountKit::getAccountDataByCode($request->get('code'));
+        $accountData = FacebookAccountKitFacade::getAccountDataByCode($request->get('code'));
         ...
     }
 }

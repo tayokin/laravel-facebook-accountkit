@@ -11,4 +11,6 @@ All notable changes to `tayokin/laravel-facebook-accountkit` will be documented 
 ## v1.0.2, 2018-04-08, 
    paths fixes
 
+## v1.0.3, 2018-04-08, 
+   json_decode fixes
 

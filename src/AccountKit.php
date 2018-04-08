@@ -44,6 +44,7 @@ class AccountKit
      *
      * @return mixed
      *
+     * @throws \RuntimeException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getAccountDataByCode(string $code)
@@ -58,6 +59,7 @@ class AccountKit
      *
      * @return string
      *
+     * @throws \RuntimeException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     private function getAccessTokenByCode(string $code): string
@@ -74,13 +76,14 @@ class AccountKit
      *
      * @return mixed
      *
+     * @throws \RuntimeException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     private function getContentBody(string $url)
     {
         $data = $this->client->request('GET', $url);
 
-        return json_decode($data->getBody());
+        return json_decode($data->getBody()->getContents());
     }
 
     /**
