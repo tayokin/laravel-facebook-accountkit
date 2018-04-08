@@ -1,0 +1,48 @@
+{
+    "name": "tayokin/laravel-facebook-accountkit",
+    "type": "library",
+    "description": "Laravel Facebook Account Kit SDK (PHP)",
+    "keywords": ["laravel", "facebook", "accountkit", "account kit", "php"],
+    "homepage": "https://github.com/tayokin/laravel-facebook-accountkit",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tayokin Max",
+            "email": "tayokin.max@gmail.com",
+            "homepage": "https://github.com/tayokin/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": ">=5.1",
+        "php" : ">=7.1.0",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : ">=5.4.3",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tayokin\\FacebookAccountKit\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tayokin\\FacebookAccountKit\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
