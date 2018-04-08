@@ -13,11 +13,9 @@ class FacebookAccountKitServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $config = \dirname(__DIR__).'/resources/config/accountKit.php';
-
         $this->publishes([
-            $config => config_path('accountKit.php'),
-        ], 'config');
+            \dirname(__DIR__).'/../resources/config/accountKit.php' => config_path('accountKit.php'),
+        ]);
     }
 
     /**
@@ -25,6 +23,9 @@ class FacebookAccountKitServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
+        $this->mergeConfigFrom(
+            \dirname(__DIR__).'/../resources/config/accountKit.php', 'accountKit'
+        );
         $this->app->singleton('AccountKit', function () {
             return new FacebookAccountKit();
         });
